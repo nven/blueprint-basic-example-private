@@ -32,8 +32,10 @@ inputs:
     max_length: 32
   - name: rg_git_token
     type: string
+    sensitive: true
   - name: cos_git_token
     type: string
+    sensitive: true
 outputs:
   - name: cos_id
     value: $module.basic-cos-storage.outputs.cos_id
