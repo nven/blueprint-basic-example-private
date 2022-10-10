@@ -69,12 +69,16 @@ modules:
     inputs:
       - name: cos_instance_name
         value: $blueprint.cos_instance_name
+        type: string
       - name: cos_storage_plan
         value: $blueprint.cos_storage_plan
+        type: string
       - name: cos_single_site_loc
         value: "ams03"
+        type: string
       - name: resource_group_id
         value: $module.basic-resource-group.outputs.resource_group_id
+        type: string
     outputs:
       - name: cos_id
       - name: cos_crn
