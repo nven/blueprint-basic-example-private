@@ -37,7 +37,7 @@ modules:
       catalog:
         catalog_id: "8fb26034-9f24-4a42-b843-a3623affe877"
         offering_name: "blueprint-example-modules-0.0.1-ibm-storage"
-        offering_version: "0.0.3"
+        offering_version: "0.0.4"
     inputs:
       - name: cos_instance_name
         value: $blueprint.cos_instance_name
