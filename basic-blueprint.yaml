@@ -30,10 +30,10 @@ inputs:
     sensitive: false
     options: ['lite', 'standard']
     max_length: 32
-  - name: rg_git_token
+  - name: rg_module_repo_token
     type: string
     sensitive: true
-  - name: cos_git_token
+  - name: cos_module_repo_token
     type: string
     sensitive: true
 outputs:
@@ -50,7 +50,7 @@ modules:
       git:
         git_repo_url: "https://github.com/Cloud-Schematics/blueprint-example-modules/tree/main/IBM-ResourceGroup"
         git_branch: main
-        git_token: $blueprint.rg_git_token
+        git_token: $blueprint.rg_module_repo_token
     inputs:
       - name: provision
         value: $blueprint.provision_rg
@@ -65,22 +65,18 @@ modules:
     source:
       source_type: github
       git:
-        git_repo_url: "https://github.com/nven/blueprint-example-modules/tree/main/IBM-Storage"
+        git_repo_url: "https://us-east.git.cloud.ibm.com/n.venkatesh/blueprint-example-modules"
         git_branch: main
-        git_token: $blueprint.cos_git_token
+        git_token: $blueprint.cos_module_repo_token
     inputs:
       - name: cos_instance_name
         value: $blueprint.cos_instance_name
-        type: string
       - name: cos_storage_plan
         value: $blueprint.cos_storage_plan
-        type: string
       - name: cos_single_site_loc
         value: "ams03"
-        type: string
       - name: resource_group_id
         value: $module.basic-resource-group.outputs.resource_group_id
-        type: string
     injectors:
       - tft_git_url: "https://github.com/Cloud-Schematics/tf-templates"
         tft_name: "ibm"
