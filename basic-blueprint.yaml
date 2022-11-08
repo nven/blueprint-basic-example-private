@@ -48,7 +48,7 @@ modules:
     source:
       source_type: github
       git:
-        git_repo_url: "https://github.com/Cloud-Schematics/blueprint-example-modules/tree/main/IBM-ResourceGroup"
+        git_repo_url: "https://github.com/Cloud-Schematics/blueprint-example-modules-private/tree/main/IBM-ResourceGroup"
         git_branch: main
         git_token: $blueprint.rg_git_token
     inputs:
@@ -65,7 +65,7 @@ modules:
     source:
       source_type: github
       git:
-        git_repo_url: "https://github.com/nven/blueprint-example-modules/tree/main/IBM-Storage"
+        git_repo_url: "https://github.com/nven/blueprint-example-modules-private/tree/main/IBM-Storage"
         git_branch: main
         git_token: $blueprint.cos_git_token
     inputs:
